@@ -1,0 +1,330 @@
+/**
+ * main.css - External stylesheet for Joanis Prifti CV
+ * 
+ * A modern, responsive, and print-friendly stylesheet for a professional resume.
+ * 
+ * Table of Contents:
+ * 1. Variables & Root Settings
+ * 2. Reset & Base Styles
+ * 3. Layout Container
+ * 4. Header & Contact Info
+ * 5. Section Styles
+ * 6. Experience & Project Items
+ * 7a. Technical Skills Table
+ * 7b. Professional Skills
+ * 8. Additional Info Section
+ * 9. Footer
+ * 10. Print Button
+ */
+
+/* ================================================
+   1. VARIABLES & ROOT SETTINGS
+   ================================================ */
+:root {
+  /* Color palette */
+  --primary-color: #003b5c;      /* Deep blue */
+  --accent-color: #0077cc;       /* Bright blue for links */
+  --light-accent: #e8f4fc;       /* Very light blue for backgrounds */
+  --heading-color: #111;         /* Nearly black */
+  --text-color: #333;            /* Dark gray for body text */
+  --light-text: #555;            /* Medium gray for secondary text */
+  --border-color: #ddd;          /* Light gray for borders */
+  
+  /* Spacing variables */
+  --section-spacing: 1.5rem;     /* Consistent section spacing */
+  --inner-spacing: 1rem;         /* Inner element spacing */
+  --item-spacing: 1.2rem;        /* Space between items */
+  
+  /* Typography variables */
+  --base-font-size: 14px;        /* Base font size */
+  --heading-font-weight: 600;    /* Heading font weight */
+}
+
+/* ================================================
+   2. RESET & BASE STYLES
+   ================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+               Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  font-size: var(--base-font-size);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: var(--heading-color);
+  font-weight: var(--heading-font-weight);
+}
+
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: var(--section-spacing);
+  margin-bottom: var(--inner-spacing);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--light-accent);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, ul {
+  margin-bottom: 0.8rem;
+}
+
+/* Lists */
+ul {
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+li::marker {
+  color: var(--accent-color);
+}
+
+/* ================================================
+   3. LAYOUT CONTAINER
+   ================================================ */
+.container {
+  max-width: 830px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  background: #fff;
+}
+
+@media screen {
+  .container {
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+  }
+}
+
+/* ================================================
+   4. HEADER & CONTACT INFO
+   ================================================ */
+.header {
+  text-align: center;
+  margin-bottom: var(--section-spacing);
+}
+
+.role {
+  font-size: 1.2rem;
+  color: var(--light-text);
+  margin-bottom: var(--inner-spacing);
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ================================================
+   5. SECTION STYLES
+   ================================================ */
+.section {
+  margin-bottom: var(--section-spacing);
+}
+
+/* ================================================
+   6. EXPERIENCE & PROJECT ITEMS
+   ================================================ */
+.experience-item, 
+.project-item, 
+.education-item {
+  margin-bottom: var(--item-spacing);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.item-title {
+  font-weight: var(--heading-font-weight);
+  color: var(--heading-color);
+}
+
+.company, 
+.dates {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.dates {
+  font-size: 0.9rem;
+}
+
+.tech-stack {
+  font-style: italic;
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ================================================
+   7a. TECHNICAL SKILLS TABLE
+   ================================================ */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--inner-spacing);
+  font-size: 0.95rem;
+}
+
+.skills-table th {
+  text-align: left;
+  padding: 0.5rem;
+  background-color: var(--light-accent);
+  border: 1px solid var(--border-color);
+  font-weight: var(--heading-font-weight);
+  color: var(--primary-color);
+  width: 25%;
+}
+
+.skills-table td {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+/* ================================================
+   7b. TECHNICAL SKILLS TABLE
+   ================================================ */
+.hlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.hlist li {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--light-accent);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.hlist li::marker {
+  content: none;
+}
+
+/* ================================================
+   8. ADDITIONAL INFO SECTION
+   ================================================ */
+.additional-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.info-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ================================================
+   9. FOOTER
+   ================================================ */
+footer {
+  margin-top: var(--section-spacing);
+  padding-top: var(--inner-spacing);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.priftis-quote {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 1.1em;
+  color: #34495e;
+}
+
+.priftis-quote cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: italic;
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+/* ================================================
+   10. PRINT BUTTON
+   ================================================ */
+.print-button {
+  text-align: right;
+  margin-bottom: var(--inner-spacing);
+}
+
+.print-button a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--light-accent);
+  color: var(--primary-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.print-button a:hover {
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+}

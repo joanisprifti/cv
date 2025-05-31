@@ -1,0 +1,175 @@
+/* ================================================
+   PRINT CONFIGURATION
+   ================================================ */
+@page {
+  size: A4;
+  margin: 12mm 15mm 15mm 15mm; /* Top, Right, Bottom, Left */
+}
+
+@media print {
+  body { 
+    background: none;
+    font-size: 12px; /* Slightly smaller for print */
+    line-height: 1.4;
+  }
+  
+  .container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .no-print { 
+    display: none !important; 
+  }
+  
+  a { 
+    color: var(--accent-color) !important; 
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+  
+  /* Keep links functional in PDF */
+  a[href] {
+    color: var(--accent-color) !important;
+  }
+  
+  /* Ensure text remains selectable in PDF */
+  * {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Optimize for PDF text rendering */
+  body, p, h1, h2, h3, li {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Force background colors to print */
+  .skills-table th, .hlist li {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: var(--light-accent) !important;
+  }
+  
+  /* ===== PAGE BREAK CONTROL ===== */
+  
+  /* Avoid breaking these elements */
+  .header,
+  .experience-item,
+  .project-item,
+  .education-item,
+  .skills-table,
+  .additional-info {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Section headers should not be orphaned */
+  .section h2 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* Prefer page breaks before major sections */
+  .section:not(:first-child) {
+    page-break-before: auto;
+    break-before: auto;
+  }
+  
+  /* Force page break before specific sections if needed */
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  /* Alternative: Allow natural breaks but encourage them */
+  .page-break-auto {
+    page-break-before: auto;
+    break-before: auto;
+  }
+  
+  /* Utility classes for fine-tuning page breaks */
+  .keep-together {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .allow-break {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  
+  .break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+  
+  /* Control spacing for print */
+  .section {
+    margin-bottom: 1.2rem;
+  }
+  
+  .experience-item, 
+  .project-item, 
+  .education-item {
+    margin-bottom: 1rem;
+  }
+  
+  /* Compact header for print */
+  .header {
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Reduce gaps in contact info */
+  .contact-info {
+    gap: 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Compact lists */
+  ul {
+    margin-bottom: 0.5rem;
+  }
+  
+  li {
+    margin-bottom: 0.2rem;
+  }
+  
+  /* Tighter tech stack */
+  .tech-stack {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+  
+  /* Footer adjustments */
+  footer {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+  }
+  
+  .priftis-quote {
+    font-size: 0.95em;
+  }
+  
+  .priftis-quote cite {
+    margin-top: 0.4rem;
+    font-size: 0.8em;
+  }
+}

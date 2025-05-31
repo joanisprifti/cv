@@ -1,0 +1,33 @@
+/* ================================================
+   MEDIA QUERIES
+   ================================================ */
+@media screen and (max-width: 600px) {
+  :root {
+    --base-font-size: 13px;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .item-header {
+    flex-direction: column;
+  }
+  
+  .dates {
+    margin-bottom: 0.3rem;
+  }
+  
+  .additional-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .info-section {
+    min-width: 100%;
+  }
+}
